@@ -65,3 +65,10 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
+
+
+variable "enable_addons" {
+  description = "Enable EKS Add-ons"
+  type        = bool
+  default     = true
+}

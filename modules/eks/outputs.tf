@@ -22,3 +22,8 @@ output "endpoint_public_access" {
   description = "Is public access to EKS endpoint enabled?"
   value       = aws_eks_cluster.this.vpc_config[0].endpoint_public_access
 }
+
+output "cluster_name" {
+  description = "EKS cluster name"
+  value       = aws_eks_cluster.this.name
+}

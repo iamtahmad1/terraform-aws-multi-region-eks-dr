@@ -1,5 +1,5 @@
 resource "aws_iam_role" "eks_cluster_role" {
-  name = var.iam_role_name
+  name = "${var.eks_cluster_name}-eks-role"
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
@@ -10,6 +10,7 @@ resource "aws_iam_role" "eks_cluster_role" {
     }]
   })
 }
+
 
 resource "aws_iam_role_policy_attachment" "eks_policies" {
   count      = length(var.iam_policies)
